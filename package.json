@@ -1,5 +1,7 @@
 {
-  "name": "MaterialDesign",
+  "name": "mdi",
+  "version": "1.2.66",
+
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-consolidate": "^0.1.2",
