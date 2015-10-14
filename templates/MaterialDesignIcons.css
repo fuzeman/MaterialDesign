@@ -1,0 +1,56 @@
+@font-face {
+  font-family: '<%= fontName %>';
+  src: url('<%= fontPath %><%= fontName %>.eot');
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.<%= className %> {
+  display: inline-block;
+  font: normal normal normal 24px/1 MaterialDesignIcons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:before {
+  content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>"
+}
+
+<% }); %>.<%= className %>-18px {
+  font-size: 18px;
+}
+
+.<%= className %>-24px {
+  font-size: 24px;
+}
+
+.<%= className %>-36px {
+  font-size: 36px;
+}
+
+.<%= className %>-48px {
+  font-size: 48px;
+}
+
+.<%= className %>-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.<%= className %>-dark.<%= className %>-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.<%= className %>-light {
+  color: white;
+}
+
+.<%= className %>-light.<%= className %>-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
